@@ -19,13 +19,11 @@ class Solution:
         ans = -1
         while low <= high:
             mid = (low + high) // 2
-            if nums[mid] == target:
-                ans = mid  # Update ans whenever the target is found
-                low = mid + 1  # Move to the right to find the last occurrence
-            elif nums[mid] > target:
-                high = mid - 1
+            if nums[mid] <= target:
+                ans = mid  
+                low = mid + 1  
             else:
-                low = mid + 1
+                high = high - 1
         return ans
     
         
